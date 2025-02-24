@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Genre Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Starting Page -->
+    <div class="start-page">
+        <h1 class="name">Soham Sachin Dhore</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <marquee class="marquee">Soham Sachin Dhore Project - Created on February 23, 2025</marquee>
+        <h1>Movie Genre Predictor</h1>
+        <p class="description">Discover your favorite movie genre with this interactive predictor powered by a decision tree!</p>
+        
+        <!-- Interactive Form -->
+        <form method="POST" id="predict-form">
+            <div class="interactive-form">
+                <div class="form-step active" data-step="age">
+                    <i class="fas fa-user"></i>
+                    <h2>How old are you?</h2>
+                    <input type="number" name="age" required placeholder="Enter your age">
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+                <div class="form-step" data-step="gender">
+                    <i class="fas fa-venus-mars"></i>
+                    <h2>What's your gender?</h2>
+                    <div class="gender-options">
+                        <label><input type="radio" name="gender" value="Male" required> <i class="fas fa-male"></i> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> <i class="fas fa-female"></i> Female</label>
+                    </div>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+                <div class="form-step" data-step="fav_actor">
+                    <i class="fas fa-star"></i>
+                    <h2>Who's your favorite actor?</h2>
+                    <select name="fav_actor" required>
+                        <option value="" disabled selected>Select an actor</option>
+                        <option value="Shah Rukh Khan">Shah Rukh Khan</option>
+                        <option value="Alia Bhatt">Alia Bhatt</option>
+                        <option value="Salman Khan">Salman Khan</option>
+                        <option value="Deepika Padukone">Deepika Padukone</option>
+                        <option value="Akshay Kumar">Akshay Kumar</option>
+                        <option value="Sara Ali Khan">Sara Ali Khan</option>
+                        <option value="Amitabh Bachchan">Amitabh Bachchan</option>
+                        <option value="Kriti Sanon">Kriti Sanon</option>
+                        <option value="Ranveer Singh">Ranveer Singh</option>
+                        <option value="Katrina Kaif">Katrina Kaif</option>
+                        <option value="Allu Arjun">Allu Arjun</option>
+                        <option value="Janhvi Kapoor">Janhvi Kapoor</option>
+                        <option value="Nawazuddin Siddiqui">Nawazuddin Siddiqui</option>
+                        <option value="Kiara Advani">Kiara Advani</option>
+                        <option value="Manoj Bajpayee">Manoj Bajpayee</option>
+                        <option value="Anushka Sharma">Anushka Sharma</option>
+                        <option value="Rajinikanth">Rajinikanth</option>
+                        <option value="Pooja Hegde">Pooja Hegde</option>
+                        <option value="Prabhas">Prabhas</option>
+                        <option value="Rashmika Mandanna">Rashmika Mandanna</option>
+                        <option value="Dhanush">Dhanush</option>
+                        <option value="Taapsee Pannu">Taapsee Pannu</option>
+                        <option value="Yash">Yash</option>
+                        <option value="Samantha Ruth Prabhu">Samantha Ruth Prabhu</option>
+                        <option value="Vijay Sethupathi">Vijay Sethupathi</option>
+                        <option value="Madhuri Dixit">Madhuri Dixit</option>
+                        <option value="Mahesh Babu">Mahesh Babu</option>
+                        <option value="Kajal Aggarwal">Kajal Aggarwal</option>
+                        <option value="Fahadh Faasil">Fahadh Faasil</option>
+                        <option value="Parineeti Chopra">Parineeti Chopra</option>
+                        <option value="Mohanlal">Mohanlal</option>
+                        <option value="Shweta Tripathi">Shweta Tripathi</option>
+                        <option value="Pankaj Tripathi">Pankaj Tripathi</option>
+                        <option value="Trisha Krishnan">Trisha Krishnan</option>
+                        <option value="Kamal Haasan">Kamal Haasan</option>
+                        <option value="Ritika Singh">Ritika Singh</option>
+                        <option value="Naga Chaitanya">Naga Chaitanya</option>
+                        <option value="Shraddha Kapoor">Shraddha Kapoor</option>
+                        <option value="Riteish Deshmukh">Riteish Deshmukh</option>
+                        <option value="Sonam Kapoor">Sonam Kapoor</option>
+                        <option value="Vicky Kaushal">Vicky Kaushal</option>
+                        <option value="Sonakshi Sinha">Sonakshi Sinha</option>
+                        <option value="Siddharth Malhotra">Siddharth Malhotra</option>
+                        <option value="Radhika Apte">Radhika Apte</option>
+                        <option value="Varun Dhawan">Varun Dhawan</option>
+                        <option value="Hansika Motwani">Hansika Motwani</option>
+                        <option value="Ajay Devgn">Ajay Devgn</option>
+                        <option value="Nushrratt Bharuccha">Nushrratt Bharuccha</option>
+                        <option value="Tovino Thomas">Tovino Thomas</option>
+                        <option value="Nithya Menen">Nithya Menen</option>
+                        <option value="Karthi">Karthi</option>
+                        <option value="Sai Pallavi">Sai Pallavi</option>
+                        <option value="Ram Charan">Ram Charan</option>
+                        <option value="Meera Jasmine">Meera Jasmine</option>
+                        <option value="Chiranjeevi">Chiranjeevi</option>
+                        <option value="Aishwarya Rai">Aishwarya Rai</option>
+                        <option value="Dulquer Salmaan">Dulquer Salmaan</option>
+                        <option value="Keerthy Suresh">Keerthy Suresh</option>
+                        <option value="Sunny Deol">Sunny Deol</option>
+                        <option value="Tabu">Tabu</option>
+                        <option value="Arjun Kapoor">Arjun Kapoor</option>
+                        <option value="Kangana Ranaut">Kangana Ranaut</option>
+                        <option value="Saif Ali Khan">Saif Ali Khan</option>
+                        <option value="Rakul Preet Singh">Rakul Preet Singh</option>
+                        <option value="Anil Kapoor">Anil Kapoor</option>
+                        <option value="Kareena Kapoor">Kareena Kapoor</option>
+                        <option value="John Abraham">John Abraham</option>
+                        <option value="Neha Sharma">Neha Sharma</option>
+                        <option value="Ravi Teja">Ravi Teja</option>
+                        <option value="Yami Gautam">Yami Gautam</option>
+                        <option value="Emraan Hashmi">Emraan Hashmi</option>
+                        <option value="Divya Dutta">Divya Dutta</option>
+                        <option value="Abhishek Bachchan">Abhishek Bachchan</option>
+                        <option value="Tamannaah Bhatia">Tamannaah Bhatia</option>
+                        <option value="Puneeth Rajkumar">Puneeth Rajkumar</option>
+                        <option value="Sanya Malhotra">Sanya Malhotra</option>
+                        <option value="Tiger Shroff">Tiger Shroff</option>
+                        <option value="Juhi Chawla">Juhi Chawla</option>
+                        <option value="Sanjay Dutt">Sanjay Dutt</option>
+                        <option value="Ileana D'Cruz">Ileana D'Cruz</option>
+                        <option value="Kartik Aaryan">Kartik Aaryan</option>
+                        <option value="Swara Bhasker">Swara Bhasker</option>
+                        <option value="Paresh Rawal">Paresh Rawal</option>
+                        <option value="Bhumi Pednekar">Bhumi Pednekar</option>
+                        <option value="Govinda">Govinda</option>
+                        <option value="Disha Patani">Disha Patani</option>
+                        <option value="Bobby Deol">Bobby Deol</option>
+                        <option value="Jacqueline Fernandez">Jacqueline Fernandez</option>
+                        <option value="Suniel Shetty">Suniel Shetty</option>
+                        <option value="Rani Mukerji">Rani Mukerji</option>
+                        <option value="Aditya Roy Kapur">Aditya Roy Kapur</option>
+                        <option value="Shobana">Shobana</option>
+                        <option value="Vijay Deverakonda">Vijay Deverakonda</option>
+                        <option value="Aditi Rao Hydari">Aditi Rao Hydari</option>
+                        <option value="Boman Irani">Boman Irani</option>
+                        <option value="Rimi Sen">Rimi Sen</option>
+                        <!-- Add remaining actors -->
+                    </select>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+                <div class="form-step" data-step="past_genre">
+                    <i class="fas fa-film"></i>
+                    <h2>What genre have you watched recently?</h2>
+                    <select name="past_genre" required>
+                        <option value="" disabled selected>Choose a genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Thriller">Thriller</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Predict My Genre!</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- 3D Film Reel -->
+        <div class="film-reel"></div>
+
+        {% if prediction %}
+            <div class="result">
+                <h2>Your Predicted Genre: {{ prediction }}</h2>
+            </div>
+        {% endif %}
+
+        <div class="guide">
+            <h3>How to Use:</h3>
+            <p>Step through each question, provide your details, and submit to see your predicted movie genre!</p>
+        </div>
+
+        <div class="about-me">
+            <h3>About Me</h3>
+            <p>I’m Soham, a developer passionate about machine learning and web design. This project blends both to predict movie genres.</p>
+            <p>Contact: <a href="mailto:soham.dhore2004@gmail.com">soham.dhore2004@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="watermark">Soham Sachin Dhore</div>
+
+    <!-- JavaScript for Form Steps -->
+    <script>
+        const form = document.getElementById('predict-form');
+        const steps = document.querySelectorAll('.form-step');
+        const nextButtons = document.querySelectorAll('.next-btn');
+
+        nextButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentStep = btn.parentElement;
+                const nextStep = currentStep.nextElementSibling;
+                if (nextStep) {
+                    currentStep.classList.remove('active');
+                    nextStep.classList.add('active');
+                }
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            // Ensure all fields are filled before submission (optional validation)
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            inputs.forEach(input => {
+                if (!input.value) e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
