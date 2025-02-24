@@ -27,6 +27,5 @@ Before you start, make sure you have:
 - A web browser (like Chrome or Firefox) to see the app in action
 
 **Output:**
-<img width="1125" alt="Screenshot 2025-02-24 at 10 07 51 AM" src="https://github.com/user-attachments/assets/9035cbdd-d2c5-4706-b50e-69278bd2b96a" />
 <img width="1125" alt="Screenshot 2025-02-24 at 10 07 51 AM" src="https://github.com/user-attachments/assets/8c55617d-8037-43be-9ccb-c84530c88456" />
 
